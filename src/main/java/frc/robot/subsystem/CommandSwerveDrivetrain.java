@@ -28,8 +28,7 @@ import frc.robot.util.LimeLightCam;
 
 public final class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Subsystem, Sendable {
 	private static CommandSwerveDrivetrain m_Swerve;
-	private static LimeLightCam frontTable = new LimeLightCam("FrontCamera");
-    private static LimeLightCam backTable = new LimeLightCam("BackCamera");
+	private static LimeLightCam frontTable = new LimeLightCam("limelight-front");
 
 	public static synchronized CommandSwerveDrivetrain get() {
 		if (m_Swerve == null)
@@ -49,7 +48,6 @@ public final class CommandSwerveDrivetrain extends TunerSwerveDrivetrain impleme
 	public void periodic() {
 		  // This runs 50 times per second
         frontTable.addVisionEstimate(this::addVisionMeasurement, this::acceptEstimate);    
-        backTable.addVisionEstimate(this::addVisionMeasurement, this::acceptEstimate);
 	}
 
 	

@@ -64,7 +64,6 @@ public class RobotContainer {
             )
         );
 
-        joystick.a().onTrue(drivetrain.resetGyro());
         
         joystick.rightTrigger().whileTrue(new ParallelCommandGroup(intake.runIntake(),
             shooterAndTurret.runShooter()));
